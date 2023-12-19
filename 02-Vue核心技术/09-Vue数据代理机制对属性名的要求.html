@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue数据代理机制对属性名的要求</title>
+    <!-- 安装Vue -->
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <!-- 
+        1.  Vue实例不会给以_和$开始的属性名做数据代理。
+        2.  为什么？
+
+     -->
+    <!-- 容器 -->
+    <div id="app">
+        <h1>{{msg}}</h1>
+    </div>
+    <!-- vue程序 -->
+    <script>
+        const vm = new Vue({
+            el : '#app',
+            data : {
+                msg : 'Hello Vue!',
+                _name : 'zhangsan',
+                $age : 20
+            }
+        })
+    </script>
+</body>
+</html>
