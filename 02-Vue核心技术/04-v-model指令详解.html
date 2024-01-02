@@ -28,16 +28,19 @@
      -->
     <!-- 准备一个容器 -->
     <div id="app">
-        v-bind指令：<input type="text" v-bind:value="name1"> <br>
-        v-model指令： <input type="text" v-model:value="name2"> <br>
-        <!-- 以下报错了，因为v-model不能使用在这种元素上。 -->
-        <!-- <a v-model:href="url">百度</a> -->
+        v-bind指令:  <input type="text" v-bind:value="name1"> <br>
+        v-model指令: <input type="text" v-model:value="name2"> <br>
+        <!-- 
+            以下写法报错了，因为v-model不能使用在这种元素上。
+             <a v-model:href="url">百度</a>
+        -->
 
-        v-bind指令：<input type="text" :value="name1"> <br>
-        v-model指令： <input type="text" v-model="name2"> <br>
+        <!-- 简写方式 -->
+        v-bind指令:  <input type="text" :value="name1"> <br>
+        v-model指令: <input type="text" v-model="name2"> <br>
 
-        消息1：<input type="text" :value="msg"><br>
-        消息2：<input type="text" v-model="msg"><br>
+        消息1: <input type="text" :value="msg"><br>
+        消息2: <input type="text" v-model="msg"><br>
 
     </div>
     <!-- vue程序 -->

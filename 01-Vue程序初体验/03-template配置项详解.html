@@ -20,10 +20,12 @@
     <!-- vue程序 -->
     <script>
 
-        //  Vue.config是Vue的全局配置对象
-        //  peoductionTip属性可以设置是否生成生产提示信息。
-        //  默认值：true。如果是false则表示阻止生成提示信息。
-       // Vue.config.productionTip = false 也可直接在vue.js中源码改为false
+    /* 
+        Vue.config是Vue的全局配置对象
+        productionTip属性可以设置是否生成 ‘生产提示信息’。
+        默认值：true。 如果是false则表示阻止生成 ‘生产提示信息’。
+        Vue.config.productionTip = false 也可直接在vue.js中源码改为false
+    */
 
         /*
         关于template配置项：
@@ -41,23 +43,25 @@
                 el : '#app' , 表示让Vue实例去接管id='app'的容器.
             el其实是element的缩写。被翻译为元素。
         */
+       
         new Vue({
-            // 错误的
-            // template : '<h1>{{message}}</h1><h1>得一ss</h1>',
-           /* template : `
-            <div>
-                <h1>{{msg}}</h1>
-                <h1>{{name}}</h1>
-            </div>
-            `,   */
+             //template : '<h1>{{msg}}</h1> <h1>测试s</h1>', // 错误的
+             //template : '<div><h1>{{msg}}</h1> <h1>测试s</h1></div>', // 正确的
+             /* 正确的
+            template : `
+                <div>
+                    <h1>{{msg}}</h1>
+                    <h1>{{name}}</h1>
+                </div>
+            `, */
             data : {
-                msg : 'Hello Vue!!!!',
-                name : '11得一xq'
+                msg : 'test',
+                name : 'vue!!'
             },
-             el : '#app'
+            el : '#app'
             // el : document.getElementById('app')
         })
-       // }).$mount(app)
+        // }).$mount('#app')
 
     </script>
     

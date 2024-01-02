@@ -7,11 +7,12 @@
     <script src="../js/vue.js"></script>
 </head>
 <body>
-
     <div id="app">
         <h1>{{msg}}</h1>
     </div>
-
+    <div id="app2">
+        <h1>{{name}}</h1>
+    </div>
     <script>
         const vm = new Vue({
             el : '#app',
@@ -20,7 +21,6 @@
             }
         })
     </script>
-
 
     <!-- 
         1. 什么是数据代理机制
@@ -37,39 +37,40 @@
 
         // 代理对象
         let proxy = {}
-        
-        //  如果要实现数据代理机制的话，就需要给proxy新增一个name属性。
-        //  注意：代理对象新增的这个属性的名字 和 目标对象的属性名要一致。
-        
-        Object.defineProperty(proxy, 'name', {
-            // get : function(){
-            //     // 间接访问目标对象的属性
-            //     return target.name
-            // },
-            // set : function(val){
-            //     target.name = val
-            // }
 
+        // Object.defineProperty(proxy,'name',{
+        //     get : function(){
+        //         // 间接访问目标对象的属性
+        //         return target.name
+        //     },
+        //     set : function(val){
+        //         target.name = val
+        //     }
+        // })
+
+        Object.defineProperty(proxy, 'name', {
             get(){
                 console.log('getter方法执行了@@@');
-                
+
                 return target.name
             },
             set(val){
                 target.name = val
             }
         })
-        
 
-        // let target = {
-        //         name : 'zhangsan'
-        //     }
+        /*
+        以上就是数据代理机制的演示
+        下面的Vue代码中name属性可以通过proxyTest调用 -> 【06-认识vm】中msg属性可以通过vm调用
+         */
+        let targetTest = {
+            name : '李四'
+        }
 
-        // const proxy = new Vue({
-        //     el : '#app',
-        //     data : target
-        // })
-        
+        const proxyTest = new Vue({
+            el : '#app2',
+            data : targetTest
+        })
 
      </script>
 </body>

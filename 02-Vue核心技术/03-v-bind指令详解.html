@@ -53,11 +53,12 @@
         <!-- 以下文本框可以让value这个数据变成动态的: 这个就是典型的动态数据绑定。 -->
         <input type="text" name="username" :value="username"> <br>
 
-        <!-- 使用v-bind也可以让超链接的地质动态 -->
+        <!-- 使用v-bind也可以让超链接的地址动态 -->
         <a href="https://www.baidu.com">走起</a> <br>
         <a :href="url">走起2</a> <br>
 
         <!-- 不能采用以下写法吗？ -->
+        <!-- <a href="{{url}}">走起3</a> -->
         <!-- 
             不能这样，报错了，信息如下：
             Interpolation inside attributes has been removed. 
@@ -68,7 +69,6 @@
             请使用v-bind或冒号速记来代替。
             请使用 <div :id="val"> 来代替 <div id="{{ val }}">
          -->
-        <!-- <a href="{{url}}">走起3</a> -->
 
          <h1></h1>
 
