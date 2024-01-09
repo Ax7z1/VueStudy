@@ -31,6 +31,7 @@
         <button @click="changeBig">变大</button>
         <button @click="changeSmall">变小</button>
         <!-- 动态写法：动静都有 -->
+        <!-- 适用场景：如果确定动态绑定的样式个数只有1个，但是名字不确定。 -->
         <div class="static" :class="c1">{{msg}}</div>
     </div>
 
