@@ -11,6 +11,29 @@
 <body>
     <div id="app">
         <h1>{{msg}}</h1>
+
+        <h2>遍历对象的属性</h2>
+        <ul>
+            <li v-for="(value,propertyName) of user">
+                {{propertyName}},{{value}}
+            </li>
+        </ul>
+
+        <h2>遍历字符串</h2>
+        <ul>
+            <li v-for="(c,index) of str">
+                {{index}},{{c}}
+            </li>
+        </ul>
+
+        <h2>遍历指定的次数</h2>
+        <ul>
+            <li v-for="(num,index) of counter">
+                {{index}},{{num}}
+            </li>
+        </ul>
+
+        <h2>遍历数组</h2>
         <!-- 静态列表 -->
         <ul>
             <li>张三</li>
@@ -73,7 +96,14 @@
                     { id: '111', name: 'Jack', age: 20 },
                     { id: '222', name: 'Lucy', age: 30 },
                     { id: '333', name: 'James', age: 40 }
-                ]
+                ],
+                user : {
+                    id : '111',
+                    name : '张三',
+                    gender: '男'
+                },
+                str : '一串字符串',
+                counter : 10
             }
         })
     </script>
