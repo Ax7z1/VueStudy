@@ -24,6 +24,7 @@
                     :key
                 如果没有指定 :key 属性，会自动拿index作为key。
                 这个key是这个dom元素的身份证号/唯一标识。
+<<<<<<< HEAD
 
                 分析一下：采用index作为key存在什么问题？
                     第一个问题：效率低。
@@ -32,6 +33,10 @@
                     建议使用对象id作为key    
             -->
             <tr v-for="(hero,index) in heros" :key="hero.id">
+=======
+             -->
+            <tr v-for="(hero,index) in heros">
+>>>>>>> a930290a2de5a600f1bea90b2d010e13fd1f984f
                 <td>{{index+1}}</td>
                 <td>{{hero.name}}</td>
                 <td>{{hero.power}}</td>
