@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue的生命周期</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{msg}}</h1>
+        <h3>计数器：{{counter}}</h3>
+        <button @click="add">点我加1</button>
+        <button @click="destroy">点我销毁</button>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'Vue生命周期',
+                counter : 1
+            },
+            methods : {
+                add(){
+                    this.counter ++
+                },
+                destroy(){
+                    // 销毁vm
+                    this.$destroy()
+                }
+            },
+            // 1.初始阶段
+            beforeCreate() {
+                // 创建前
+                console.log('beforeCreate');
+            },
+            created() {
+                // 创建后
+                console.log('created');
+            },
+            // 2.挂载阶段
+            beforeMount() {
+                // 挂载前
+                console.log('beforeMount');
+            },
+            mounted() {
+                // 挂载后
+                console.log('mounted');
+            },
+            // 3.更新阶段
+            beforeUpdate() {
+                // 更新前
+                console.log('beforeUpdate');
+            },
+            updated() {
+                // 更新后
+                console.log('updated');
+            },
+            // 4.销毁阶段
+            beforeDestroy() {
+                // 销毁前
+                console.log('beforeDestory');
+            },
+            destroyed() {
+                // 销毁后
+                console.log('destoryed');
+            }
+        })
+    </script>
+</body>
+
+</html>
