@@ -29,16 +29,37 @@
                 destroy(){
                     // 销毁vm
                     this.$destroy()
-                }
+                },
+                /* m(){
+                    console.log('m....');
+                } */
             },
-            // 1.初始阶段
+            /*
+            1.初始阶段
+                el有，template也有，最终编译template模板语句。
+                el有，template没有，最终编译el模板语句。
+                el没有的时候，需要手动调用 vm.$mount(el) 进行手动挂载，然后流程才能继续。此时如果template有，最终编译template模板语句。
+                el没有的时候，需要手动调用 vm.$mount(el) 进行手动挂载，然后流程才能继续。此时如果没有template，最终编译el模板语句。
+
+                结论：
+                    流程要想继续：el必须存在。
+                    el和template同时存在，优先选择template。如果没有template，才会选择el。
+            */
             beforeCreate() {
                 // 创建前
-                console.log('beforeCreate');
+                // 创建前值的是：数据代理和数据监测的创建前。
+                // 此时还无法访问data当中的数据。包括methods也是无法访问的。
+                console.log('beforeCreate', this.counter);
+                // 调用methods报错了，不存在
+                // this.m()
             },
             created() {
                 // 创建后
-                console.log('created');
+                // 创建后表示数据代理和数据监测创建完毕。可以访问data中的数据了。
+                console.log('created', this.counter);
+                // 可以访问methods了。
+                // this.m()
+                debugger
             },
             // 2.挂载阶段
             beforeMount() {
