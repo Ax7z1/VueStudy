@@ -59,7 +59,6 @@
                 console.log('created', this.counter);
                 // 可以访问methods了。
                 // this.m()
-                debugger
             },
             // 2.挂载阶段
             beforeMount() {
@@ -69,6 +68,9 @@
             mounted() {
                 // 挂载后
                 console.log('mounted');
+                console.log(this.$el)
+                console.log(this.$el instanceof HTMLElement)
+                debugger
             },
             // 3.更新阶段
             beforeUpdate() {
