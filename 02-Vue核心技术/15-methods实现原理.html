@@ -16,7 +16,8 @@
             },
             methods : {
                 sayHi(){
-                    //console.log(this === vm)
+                    // 这里的this和vm是同一个
+                    console.log(this === vm)
                     console.log(this.msg);
                     alert('hi')
                 },
